@@ -6,9 +6,11 @@ const express = require('express');
 const app = express();
 
 const expressLayouts = require('express-ejs-layouts')
+const bodyParser = require('body-parser')
 
 // path to accessible folder
 const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -17,6 +19,8 @@ app.set('layout', 'layout/layouts')
 // public folder
 app.use(expressLayouts)
 app.use(express.static('public'))
+
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false} ));
 
 /* Mongo DB connection*/
 const mongoose = require('mongoose')
@@ -29,6 +33,7 @@ db.once('open',() => console.log('Connected to Mongoose'))
 
 // Routes
 app.use('/', indexRouter);
+app.use('/authors', authorRouter);
 
 // Port
 app.listen(process.env.PORT || 3000)

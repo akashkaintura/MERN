@@ -7,6 +7,7 @@ const app = express();
 
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
+const methodOverride = require('./routes/books')
 
 // path to accessible folder
 const indexRouter = require('./routes/index')

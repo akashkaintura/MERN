@@ -21,6 +21,7 @@ app.set('layout', 'layout/layouts')
 app.use(expressLayouts)
 app.use(express.static('public'))
 
+// body Parsser for the 
 app.use(bodyParser.urlencoded({ limit: '10mb',extended: true }));
 
 /* Mongo DB connection*/

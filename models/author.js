@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Book = require('./book')
 
-// DB Validations
 const authorSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -9,7 +8,6 @@ const authorSchema = new mongoose.Schema({
   }
 })
 
-// DB Relations
 authorSchema.pre('remove', function(next) {
   Book.find({ author: this.id }, (err, books) => {
     if (err) {

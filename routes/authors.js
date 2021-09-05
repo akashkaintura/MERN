@@ -22,12 +22,6 @@ router.get('/', async (req, res) => {
 
 // New Author Route
 router.get('/new', (req, res) => {
-  router.get('/new', (req, res) => {
-  const authorExists = await Author.exists({
-    authors: authors
-  })
-  if(authorExists) 
-  res.send("Author Already exisits")
   res.render('authors/new', { author: new Author() })
 })
 

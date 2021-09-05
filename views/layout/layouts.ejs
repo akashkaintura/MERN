@@ -15,16 +15,25 @@
     <script defer src="/javascripts/fileUpload.js"></script>
     <!-- End -->
 
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <!-- End -->
+
     <!-- Favicon -->
     <link rel="shortcut icon" 
     href="https://e7.pngegg.com/pngimages/225/361/png-clipart-black-book-logo-amazon-com-computer-icons-book-library-icon-study-s-miscellaneous-angle-thumbnail.png" 
     type="image/x-icon">
+    <!-- End -->
 
     <title>Library</title>
 </head>
-<body> 
-    <%- include('../partials/header.ejs') %>
-    <%- include('../partials/errorMessage.ejs') %>
-    <%- body %>
+<body > 
+    <div class="container">
+        <%- include('../partials/header.ejs') %>
+        <div class="inner-container">
+          <%- include('../partials/errorMessage.ejs') %>
+          <%- body %>
+        </div>
+    </div>
 </body>
 </html>

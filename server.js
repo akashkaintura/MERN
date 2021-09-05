@@ -18,6 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(expressLayouts)
   app.use(methodOverride('_method'))
   app.use(express.static('public'))
+//   css 
+// app.use(express.static('/public/stylesheets'))
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
   
   const mongoose = require('mongoose')
